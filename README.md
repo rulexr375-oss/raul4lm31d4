@@ -13,6 +13,5 @@
 
 ## Contacto y Enlaces
 - 📧 Correo institucional: [jalmeidar@ucol.mx](mailto:jalmeidar@ucol.mx)
-- 🔗 Conoce mi contenido en YouTube: [The Oldest Admin](https://www.youtube.com)
 
 - README.md
