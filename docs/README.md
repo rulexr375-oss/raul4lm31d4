@@ -29,3 +29,52 @@ graph LR
     UC3 -.->|include| UC4
 
     UC3 -.->|include| UC4
+
+classDiagram
+    class Jugador {
+        +String idJugador
+        +String nombreUsuario
+        +int puntajeTotal
+        +int nivelConciencia
+        +iniciarPartida()
+        +consultarEnciclopedia()
+    }
+
+    class Partida {
+        +String idPartida
+        +DateTime fechaInicio
+        +int puntuacionActual
+        +finalizarPartida()
+    }
+
+    class ZonaDePesca {
+        +String idZona
+        +String nombreUbicacion
+        +String descripcionEcologica
+        +List~EspecieMarina~ especiesDisponibles
+        +verificarRestricciones()
+    }
+
+    class EspecieMarina {
+        +String nombreComun
+        +String nombreCientifico
+        +boolean enPeligroExtincion
+        +float tamanioMinimoLegal
+        +boolean temporadaVedaActiva
+        +validarCapturaSustentable(float tamanio)
+    }
+
+    class Captura {
+        +String idCaptura
+        +float pesoCapturado
+        +float tamanioCapturado
+        +boolean esLegal
+        +String mensajeFeedbackEcologico
+        +registrarCaptura()
+    }
+
+    Jugador "1" --> "*" Partida : juega
+    Partida "1" --> "*" Captura : registra
+    Captura "*" --> "1" EspecieMarina : involucra
+    Captura "*" --> "1" ZonaDePesca : realizadaEn
+    ZonaDePesca "1" --> "*" EspecieMarina : habitaEn
