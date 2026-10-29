@@ -1,4 +1,5 @@
-# Documentación del Proyecto Integrador: Veracruz Oddysee
+# Documentación del Proyecto Integrador: Juego Educativo de Pesca (Veracruz)
+
 ## 1. Introducción
 Este documento presenta el modelado UML (Casos de Uso y Diagramas de Clases) para el desarrollo del videojuego educativo enfocado en la conservación ambiental y la pesca sustentable en el estado de Veracruz.
 
@@ -26,7 +27,6 @@ graph LR
     Admin --> UC4
 
     UC3 -.->|include| UC4
-
 classDiagram
     class Jugador {
         +String idJugador
@@ -75,4 +75,3 @@ classDiagram
     Captura "*" --> "1" EspecieMarina : involucra
     Captura "*" --> "1" ZonaDePesca : realizadaEn
     ZonaDePesca "1" --> "*" EspecieMarina : habitaEn
-
